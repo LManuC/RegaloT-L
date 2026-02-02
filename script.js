@@ -7,13 +7,16 @@ cards.forEach(card => {
     card.addEventListener('click', () => {
 
         // Volver todas a estado normal
-        cards.forEach(c => c.classList.remove('flipped'));
-
-        // Girar solo la seleccionada
-        card.classList.add('flipped');
-
-        selectedValue = card.dataset.value;
-        submitBtn.disabled = false;
+        if (selectedValue === card.dataset.value) {
+            card.classList.remove('flipped');
+            selectedValue = null;
+            submitBtn.disabled = true;
+        } else {
+            cards.forEach(c => c.classList.remove('flipped'));
+            card.classList.add('flipped');
+            selectedValue = card.dataset.value;
+            submitBtn.disabled = false;
+        }
     });
 });
 
