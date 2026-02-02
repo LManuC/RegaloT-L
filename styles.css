@@ -25,6 +25,11 @@ html, body {
     width: 100%;
     scroll-snap-align: start;
 }
+
+.section.heladeras {
+    height: 100vh;
+    overflow: hidden;
+}
 /* ====== HOTEL ====== */
 
 .hotel {
@@ -56,10 +61,6 @@ html, body {
 /* ====== HELADERAS ====== */
 
 .heladeras {
-    /* background-image: url("img/heladeras.jpg");
-    background-repeat: no-repeat;
-    background-position: center-left; */
-
     display: flex;
     flex-direction: column;
     background-size: contain;
@@ -84,17 +85,17 @@ html, body {
 }
 
 .heladeras-content {
+    /* height: 80%; */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
+    padding: 0px 40px;
 }
 
-.heladeras h2 {
+.heladeras h1 {
     text-align: center;
     margin-bottom: 20px;
     margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 .heladeras-image {
@@ -105,6 +106,15 @@ html, body {
     background-color: #DBB394; /* color de relleno */
 }
 
+#submitBtn {
+    margin: auto;
+    /* margin-bottom: 8px; */
+}
+
+.heladeras-footer {
+    text-align: center;
+    margin: 12px 0px;
+}
 /* ====== TARJETAS ====== */
 
 .card {
