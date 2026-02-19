@@ -14,21 +14,18 @@ html, body {
 }
 
 .page {
-    height: 100vh;
-    overflow-y: scroll;
+    height: 95vh;
+    overflow-y: visible;
     scroll-snap-type: y mandatory;
 }
 
 
 .section {
-    height: 100svh;
+    height: 95svh;
     width: 100%;
     scroll-snap-align: start;
 }
 
-/* .section.heladeras {
-    overflow: hidden;
-} */
 /* ====== HOTEL ====== */
 
 .hotel {
@@ -37,10 +34,11 @@ html, body {
     background-image: url("img/hotel.jpg");
     background-size: cover;
     background-position: center;
+    opacity: 0.6;
 }
 
 .hotel-text {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.75);
     padding: 30px;
     margin: auto;
     border-radius: 12px;
@@ -48,6 +46,7 @@ html, body {
 
 .hotel-text p {
     margin-top: 10px;
+    opacity: 1;
     line-height: 1.5;
 }
 
