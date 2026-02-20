@@ -273,12 +273,12 @@ button:hover {
     }
 
     .section {
-        height: 90vh;
         scroll-snap-align: center;
         overflow: hidden;
     }
 
     .hotel {
+        height: 70vh;
         background-size: auto 45%;
     }
 
