@@ -13,17 +13,7 @@ body {
 html, body {
     height: 100vh;
 }
-/* .page {
-    height: 95vh;
-    overflow-y: visible;
-    scroll-snap-type: y mandatory;
-}
 
-.section {
-    height: 95svh;
-    width: 100%;
-    scroll-snap-align: start;
-} */
 .page {
   height: 90vh;
   overflow-y: visible;
@@ -91,11 +81,11 @@ html, body {
     text-align: center;
     margin-bottom: 20px;
     margin-top: 20px;
-    /* margin-top: 20px; */
 }
 
 .thanks {
-    height: 100vh;
+    height: 100%;
+    overflow-y: hidden;
     background-color: #DCB494;
 
     display: flex;
@@ -104,12 +94,11 @@ html, body {
     justify-content: space-between; /* reparte arriba/medio/abajo */
     text-align: center;
 
-    padding: 24px 16px; /* espacio interno */
+    padding: 10px 2px; /* espacio interno */
 }
 
 .thanks h1 {
-    margin-top: auto;
-    margin-bottom: 20px;
+    margin-top: 20px;
     font-size: 2rem;
 }
 
@@ -118,7 +107,8 @@ html, body {
     display: flex;
     align-items: center;          /* ✅ centra verticalmente la imagen */
     justify-content: center;      /* ✅ centra horizontalmente */
-    width: 100%;
+    /* width: 100%; */
+    height: 100%;
     min-height: 0;                /* ✅ evita overflow raro en flex */
 }
 
@@ -131,8 +121,7 @@ html, body {
 }
 
 .thanks p {
-    margin-top: 20px;
-    margin-bottom: auto;
+    margin-bottom: 20px;
     font-size: 1.7rem;
 }
 
@@ -278,6 +267,11 @@ button:hover {
 }
 
 @media (max-width: 768px) {
+    .thanks {
+        height: 100svh;
+        overflow: hidden;
+    }
+
     .section {
         height: 90vh;
         scroll-snap-align: center;
@@ -286,9 +280,6 @@ button:hover {
 
     .hotel {
         background-size: auto 45%;
-    }
-
-    .section.heladeras {
     }
 
     .heladeras-grid {
