@@ -33,5 +33,4 @@ submitBtn.addEventListener('click', () => {
     const url = `https://wa.me/5491159929089?text=${encodeURIComponent(message)}`;
     
     window.open(url, 'blank');
-    window.open('./dedicatoria.html', '_self');
 });
