@@ -292,20 +292,25 @@ button:hover {
         height: 50vh;
     }
 
-    /* 2 columnas prolijas en mobile */
-  .cards{
-    display: grid;                 /* ✅ en mobile grid */
-    grid-template-columns: 1fr 1fr;/* ✅ 2 columnas */
-    gap: 16px 16px;                /* ✅ separación real */
-    justify-items: center;
-    margin: 0 auto;
-    width: 100%;
-    padding: 0 12px;               /* aire a los costados */
-  }
+        /* 2 columnas prolijas en mobile */
+    .cards{
+        display: grid;                 /* ✅ en mobile grid */
+        grid-template-columns: 1fr 1fr;/* ✅ 2 columnas */
+        gap: 16px 16px;                /* ✅ separación real */
+        justify-items: center;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 12px;               /* aire a los costados */
+    }
 
-  .card{
-    width: 100%;                   /* ocupa la celda */
-    max-width: 160px;              /* controlás el tamaño */
-    height: 220px;                 /* fijo y prolijo */
-  }
+    .card{
+        width: 100%;                   /* ocupa la celda */
+        max-width: 160px;              /* controlás el tamaño */
+        height: 220px;                 /* fijo y prolijo */
+    }
+
+    .thanks_img {
+        height: 80%;
+    }
+
 }
