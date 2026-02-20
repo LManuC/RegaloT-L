@@ -11,10 +11,9 @@ body {
 }
 
 html, body {
-    height: 100%;
+    height: 100vh;
 }
-
-.page {
+/* .page {
     height: 95vh;
     overflow-y: visible;
     scroll-snap-type: y mandatory;
@@ -24,6 +23,31 @@ html, body {
     height: 95svh;
     width: 100%;
     scroll-snap-align: start;
+} */
+.page {
+  height: 90vh;
+  overflow-y: visible;
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  height: 90vh;
+  scroll-snap-align: center;
+  overflow: hidden;
+}
+
+.section.heladeras {
+  position: relative;
+  overflow: hidden;     /* la sección no scrollea */
+  display: flex;
+  flex-direction: column;
+}
+
+#submitBtn {
+  position: sticky;
+  bottom: 12px;              /* separación del borde */
+  z-index: 50;               /* arriba de las cards */
+  margin: 12px auto;         /* centrado */
 }
 
 /* ====== HOTEL ====== */
@@ -31,6 +55,7 @@ html, body {
 .hotel {
     display: flex;
     align-items: flex-start;
+    flex-direction: column;
     background-image: url("img/hotel.jpg");
     background-size: auto 100%;
     background-repeat: no-repeat;
@@ -56,10 +81,10 @@ html, body {
 }
 
 .heladeras-content {
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    padding: 0 0px;
+  flex: 1;
+  overflow-y: auto;                 /* ✅ scroll acá */
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 110px;            /* ✅ reserva espacio para el botón */
 }
 
 .heladeras h1 {
@@ -112,8 +137,12 @@ html, body {
 }
 
 #submitBtn {
-    margin-top: auto;
-    margin-bottom: 40px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 16px;
+  z-index: 100;
+  margin: 0;                        /* importante: no uses auto acá */
 }
 
 /* ====== TARJETAS ====== */
@@ -217,6 +246,13 @@ html, body {
     z-index: 1;
 }
 
+.hotel p {
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: large;
+}
+
 /* 4) Asignación de imagen por tarjeta (la ponemos en el ::before) */
 .card-back.img-1::before { background-image: url('img/heladera1_open.jpg'); }
 .card-back.img-2::before { background-image: url('img/heladera2_open.jpg'); }
@@ -232,57 +268,53 @@ button {
     font-size: 16px;
     border: none;
     border-radius: 8px;
-    background: #7c3aed;
+    background: #b48258;
     color: white;
     cursor: pointer;
 }
 
-button:disabled {
-
-    background: #ccc;
+button:hover {
+    background: #916846;
 }
 
 @media (max-width: 768px) {
-
-    .heladeras-grid {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        min-height: 100svh;
+    .section {
+        height: 90vh;
+        scroll-snap-align: center;
+        overflow: hidden;
     }
 
-    .heladeras-image {
-        width: 100%;
-        height: 35svh;
-        background-size: cover;
-        background-position: center;
+    .hotel {
+        background-size: auto 45%;
+    }
+
+    .section.heladeras {
+    }
+
+    .heladeras-grid {
+        height: auto;
+        /* min-height: 100svh; */
     }
 
     .heladeras-content {
-        min-height: calc(100svh - 35svh);
-        display: flex;
-        flex-direction: column;
-        flex: none;
-        height: 100%;
-        justify-content: flex-start;
-        padding: 20px 15px;
+        padding: 5px;
+        height: 50vh;
     }
 
-    .cards {
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-        margin: 20px 0;
-    }
+    /* 2 columnas prolijas en mobile */
+  .cards{
+    display: grid;                 /* ✅ en mobile grid */
+    grid-template-columns: 1fr 1fr;/* ✅ 2 columnas */
+    gap: 16px 16px;                /* ✅ separación real */
+    justify-items: center;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 12px;               /* aire a los costados */
+  }
 
-    .card {
-        width: 90%;
-        max-width: 320px;
-        height: 260px;
-    }
-
-    #submitBtn {
-        margin-top: auto;
-        margin-bottom: 20px;
-    }
+  .card{
+    width: 100%;                   /* ocupa la celda */
+    max-width: 160px;              /* controlás el tamaño */
+    height: 220px;                 /* fijo y prolijo */
+  }
 }
